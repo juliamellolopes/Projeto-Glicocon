@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/glicoconstyles.css">
+    <script src="./js/funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .chartDiv {
+            width: 600px;
+            height: 200px;
+        }
+        
+    </style>
+    <title>Glicocon</title>
+</head>
+<body onload="setName()">
+    <header class="header">
+        <div class="hBox">
+            <div class="b1">
+                <button class="glicocon"><a href="./glicocon.html">GLICOCON</a></button>
+            </div>
+            <button class="buttonOla" onclick="redirecionarPerfil()" class="perfil">
+                <div class="b2">
+                    <p class="ola">Olá, <span id="userName"></span></p>
+                    <img class="icon" src="./css/images/perfil.png" alt="">
+                </div>
+            </button>
+        </div>
+    </header>
+    <div class="flexbox">
+        <div class="graph">
+            <div class="subflex">
+                <div class="infos">
+                    <p class="hist">Seu histórico</p>
+                    <p><span class="mgdl">140 mg/dl</span></p>
+                </div>
+                <button onclick="limparDados()" class="excluir">Excluir</button>
+            </div>
+            <div class="chartDiv"><canvas class="myChart" id="myChart"></canvas></div>
+        <script>
+                // Dados iniciais
+                const x_data = [0, 60, 120, 180, 240, 300, 360];
+                let y_data = []; 
+        
+                // Função para atualizar o gráfico com os dados fornecidos
+                function atualizarGrafico() {
+                    const ctx = document.getElementById('myChart').getContext('2d');
+        
+                    // Configurações do gráfico
+                    const chart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: x_data,
+                            datasets: [{
+                                label: 'Dados',
+                                data: y_data,
+                                borderColor: 'blue',
+                                borderWidth: 1,
+                                fill: false
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'X'
+                                    }
+                                },
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Y'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+        
+                // Função para inserir um novo dado ao gráfico
+                function inserirDado() {
+                    const novoDado = document.getElementById("glicose").value;
+                    if (novoDado !== null && !isNaN(novoDado)) {
+                        y_data.push(parseFloat(novoDado));
+                        console.log(y_data);
+                        atualizarGrafico2(y_data);
+                    } else {
+                        alert('Por favor, insira um número válido.');
+                    }
+                }
+                
+                //Função para atualizar o grafico
+                function atualizarGrafico2(newData) {
+                    const ctx = document.getElementById('myChart').getContext('2d');
+                    // Obtenha o gráfico existente
+                    const chart = Chart.getChart('myChart');
+  
+                    // Atualize os dados dos datasets
+                    chart.data.datasets[0].data = newData;
+  
+                     // Atualize o gráfico
+                    chart.update();
+                }
+
+                // Função para limpar os dados do gráfico
+                function limparDados() {
+                    y_data = [];
+                    atualizarGrafico2(y_data);
+                    document.getElementById("transferencia").textContent = " ";
+                    document.getElementById("degrau").textContent = " ";
+                    document.getElementById("graphFun").innerHTML = " ";
+                }
+        
+                // Inicializa o gráfico ao carregar a página
+                atualizarGrafico();
+
+                function truncarNumerosEquacao(equacao, casasDecimais) {
+                    const partes = equacao.split(/(\d+\.\d+)/); // Divide a equação em partes separando os números
+                    const equacaoTruncada = partes.map((parte) => {
+                        if (!isNaN(parseFloat(parte))) { // Verifica se a parte é um número
+                            return parseFloat(parte).toFixed(casasDecimais); // Arredonda o número para o número de casas decimais desejado
+                        }
+                        return parte; // Mantém a parte se não for um número
+                    }).join(''); // Junta as partes de volta em uma única string
+                    return equacaoTruncada;
+                }
+
+                function fazerRequisicao() {
+                    var dados = {
+                        "y_data": y_data // Seus dados aqui
+                    };
+                    console.log(dados);
+                    fetch('http://localhost:5000/ajuste-curva', {
+                        method: 'POST',
+                        headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(dados)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro ao fazer a requisição');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        var equacaoS = data.equacao_s;
+                        equacaoS = truncarNumerosEquacao(equacaoS, 2);
+                        var equacaoDegrauT = data.equacao_degrau_t;
+                        equacaoDegrauT = truncarNumerosEquacao(equacaoDegrauT, 2);
+                        var imagemGrafico = data.imagem_grafico;
+
+                        // Atualiza o DOM com os resultados recebidos
+                        document.getElementById('graphFun').innerHTML = '<img src="data:image/png;base64,' + imagemGrafico + '" alt="Gráfico" style="max-width: 420px; max-height: 240px;">';
+                        document.getElementById('transferencia').textContent = equacaoS;
+                        document.getElementById('degrau').textContent = equacaoDegrauT;
+                    })
+                    .catch(error => {
+                        console.error('Erro na requisição:', error);
+                    });
+                }
+                // Atribuição da função fazerRequisicao() ao evento de clique do botão "gera"
+                $(document).ready(function() {
+                    $('.gera').on('click', function() {
+                        fazerRequisicao(); // Chama a função de requisição AJAX ao clicar no botão
+                });
+            });
+        </script>
+        </div>
+        <div id="graphFun" class="graphF">
+        </div>
+    </div>
+        <div class="funcoes">
+            <div class="aplicacao">
+                <div class="block">
+                    <p class="title">Função de transferencia</p>
+                    <p class="show"><span id="transferencia"></span></p>
+                </div>
+            </div>
+            <div class="ultimaAplicacao">
+                <div class="block">
+                    <p class="title">Degrau</p>
+                    <p class="show"><span id="degrau"></span></p>
+                </div>
+            </div>
+            <button onclick="fazerRequisicao()" class="gera">Gera função</button>
+        </div>
+    <div class="flex">
+        <div class="glico">
+            <div class="input">
+                <label for="glicose">Registre sua Glicose</label>
+                <input id="glicose" type="text" placeholder=" ">
+            </div>
+            <button onclick="inserirDado()" class="blue">Confirma</button>
+        </div>
+    </div>
+    <img class="girl" src="./css/images/postLoginGirl.png" alt="">
+    <img class="boy" src="./css/images/postLoginBoy.png" alt="">
+    <footer class="footer">
+        <p>@2023 Todos os direiros reservados.</p>
+    </footer>
+</body>
+</html>
+

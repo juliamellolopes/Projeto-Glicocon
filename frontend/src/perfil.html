@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/perfilstyles.css">
+    <script src="./js/funcoes.js"></script>
+    <title>Perfil</title>
+</head>
+<body onload="setData()">
+    <header class="header">
+        <div class="hBox">
+            <div class="b1">
+                <button class="glicocon"><a href="./glicocon.html">GLICOCON</a></button>
+            </div>
+            <button class="perfil"><a href="./perfil.html">
+                <div class="b2">
+                    <p class="ola">Olá, <span id="userName"></span></p>
+                    <img class="icon" src="./css/images/perfil.png" alt="">
+                </div>
+            </a>
+            </button>
+        </div>
+    </header> 
+    <div class="box">
+        <img class="perfilPic" src="./css/images/cadastroGirl.png" alt="">
+        <div class="infos">
+            <div class="infosDiv">
+                <div class="float"><p>Nome:</p></div>
+                <div class="holder"><p><span id="userNameComp"></span></p></div>
+                <button onclick="showDiv()" class="edButton"><img class="iconEdit" src="./css/images/edit.png" alt=""></button>
+            </div>
+            <div class="infosDiv">
+                <div class="float"><p>Email:</p></div>
+                <div class="holder"><p><span id="userEmail"></span></p></div>
+                <button onclick="showDiv()" class="edButton"><img class="iconEdit" src="./css/images/edit.png" alt=""></button>
+            </div>
+            <div class="infosDiv">
+                <div class="float"><p>CRM:</p></div>
+                <div class="holder"><p><span id="userCRM"></span></p></div>
+                <button onclick="showDiv()" class="edButton"><img class="iconEdit" src="./css/images/edit.png" alt=""></button>
+            </div>
+        </div>
+    </div>
+    <div class="edit" id="edit">
+        <div class="did-floating-label-content">
+            <input id="nome" class="did-floating-input" type="text" placeholder=" ">
+            <label class="did-floating-label">Nome</label>
+          </div>
+          <div class="did-floating-label-content">
+              <input id="email" class="did-floating-input" type="email" placeholder=" ">
+              <label class="did-floating-label">Email</label>
+            </div>
+            <div class="did-floating-label-content">
+                <input id="crm" class="did-floating-input" type="text" placeholder=" ">
+                <label class="did-floating-label">CRM</label>
+              </div>
+            <div class="flexButton">
+                <button onclick="cancelar()" class="criarCad">Cancelar</button>
+                <button onclick="editarUsuario()" class="criarCad">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footBox">
+            <img class="chat" src="./css/images/chat.png" alt="">
+            <div >
+                <p>Dúvidas?</p>
+                <p>Fale conosco</p>
+            </div>
+        </div>
+        <p class="text">@2023 Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

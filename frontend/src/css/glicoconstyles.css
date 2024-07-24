@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+button:hover{
+    cursor: pointer;
+  }
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.header{
+    width: 100%;
+    background-color: #FCEDE9;
+}
+.hBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+button{
+    width: 165px;
+    height: 72px;
+    border-radius: 10px;
+    border-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    margin: 3px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.glicocon{
+    background-color: #EA3D3D;
+    color: #000000;
+}
+.perfil{
+    background-color: transparent;
+}
+.perfil:hover{
+    background-color: #EA3D3D;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+.b2{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.ola{
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.icon{
+    width: 40px;
+    height: 40px;
+}
+.flexbox{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.grid button{
+    width: 200px;
+    border-radius: 20px;
+    height: 40px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.graph{
+    width: 605px;
+    height: 260px;
+    background-color: #FCEDE9;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.aplicacao{
+    background-color: #A5DAF3;
+}
+.ultimaAplicacao{
+    background-color: #FF9F80;
+}
+.funcoes{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.gera{
+    width: 160px;
+    height: 45px;
+    font-size: 15px;
+    border-radius: 25px;
+    background-color: #A5DAF3;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.gera:hover{
+    background-color: #FF9F80;
+    color: #FFFFFF;
+}
+.aplicacao, .ultimaAplicacao{
+    height: 100px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.block{
+    margin-top: 10px;
+}
+.title{
+    font-family: 'Popins', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-left: 12px;
+}
+.show{
+    font-family: 'Popins', sans-serif;
+    font-size: 15px;
+    font-weight: 550;
+    text-align: center;
+    margin: 10px;
+    width: 260px;
+}
+.time{
+    font-family: 'Popins', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 15px;
+}
+.blue{
+    background-color: #A5DAF3;
+}
+.blue{
+    width: 190px;
+    height: 45px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    margin-top: 10px;
+}
+.blue:hover{
+    cursor: pointer;
+    background-color: #FF9F80;
+    color: #FFFFFF;
+}
+.flex{
+    display: flex;
+    margin: 50px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.footer{
+    text-align: center;
+    color: #FF9F80;
+    font-family: 'Popins', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 0;
+}
+input{
+    width: 200px;
+    height: 40px;
+    border: transparent;
+    background-color: #d9d9d9;
+    margin-left: 10px;
+}
+input:focus{
+    outline: none;
+}
+.input{
+    width: 220px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    border: 1px solid #323840;
+}
+label{
+    position: absolute;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    font-family: 'Popins', sans-serif;
+    font-size: 13px;
+    font-weight: 550;
+    letter-spacing: 2px;
+    margin-left: 10px;
+    margin-top: -7px;
+}
+.glico{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    height: 85px;
+    margin-top: -25px;
+}
+.girl, .boy{
+    position: absolute;
+}
+.girl{
+    width: 340px;
+    margin-left: 25px;
+    margin-top: -21%;
+}
+.boy{
+    height: 335px;
+    margin-left: 76%;
+    margin-top: -23%;
+}
+.subflex{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.excluir{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: #A5DAF3;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.excluir:hover{
+    background-color: #FF9F80;
+    color: #FFFFFF;
+}
+.hist{
+    font-family: 'Popins', sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+.mgdl{
+    font-family: 'Popins', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.buttonOla{
+    width: 250px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonOla:hover{
+    background-color: #EA3D3D;
+}
+.graphF{
+    border-radius: 10px;
+    background-color: #FCEDE9;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    height: 260px;
+    width: 385px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

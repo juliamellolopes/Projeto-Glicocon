@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+.header{
+    width: 100%;
+    background-color: #FCEDE9;
+}
+.hBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+button{
+    width: 160px;
+    height: 72px;
+    border-radius: 10px;
+    border-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    margin: 3px;
+    font-size: 20px;
+}
+.bHome{
+    background-color: #EA3D3D;
+
+}
+.bHome a{
+    color: #FFFFFF;
+}
+.bAboutUs{
+    background-color: transparent;
+}
+.bAboutUs a{
+    color: #000000;
+}
+.bAboutUs:hover{
+    background-color: #EA3D3D;
+    transition: 0.3s;
+
+}
+.bAboutUs:hover a{
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+
+.bLogin{
+    background-color: transparent;
+    margin-left: 5px;
+}
+.bLogin a{
+    color: #000000;
+}
+.bLogin:hover{
+    background-color: #EA3D3D;
+    transition: 0.3s;
+}
+.bLogin:hover a{
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+.diabetes{
+    font-family: 'Popins', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 7px;
+    font-size: 90px;
+    margin-top: 40px;
+    margin-left: 115px;
+}
+.sec1Img1{
+    position: absolute;
+    z-index: -1;
+    width: 200px;
+    height: 210px;
+    margin-top: -40px;
+}
+.text{
+    margin-left: 115px;
+    font-size: 23px;
+    width: 65%;
+}
+p{
+    font-family: 'Poppins', sans-serif;
+    
+    letter-spacing: 4px;
+}
+.sec1Img2{
+    position: absolute;
+    z-index: -1;
+    height: 480px;
+    margin-left: 67%;
+    margin-top: -140px;
+}
+.redWavy{
+    position: absolute;
+    z-index: -1;
+    margin-top: -10px;
+    height: 570px;
+}
+.pWelcome{
+    width: 90%;
+    text-align: center;
+    color: #EA3D3D;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.sBlue1{
+    color: #2D799C;
+}
+.sBlue2{
+    color: #4FB8E8;
+}
+.sRed{
+    color: #F2856D;
+}
+.about {
+    margin-top: 45px;
+}.what{
+    font-family: 'Popins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 7px;
+    font-size: 50px;
+    margin-left: 70px;
+}
+.text1{
+    margin-left: 70px;
+    margin-top: 15px;
+    font-size: 22px;
+    width: 90%;
+}
+.blueWavy{
+    position: absolute;
+    z-index: -1;
+    margin-top: 10%;
+    width: 350px;
+}
+.box{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+.box div{
+    width: 400px;
+    height: 380px;
+    border-radius: 10px;
+    border-color: transparent;
+    margin-top: 15px;
+    justify-content: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.box .title{
+    font-family: 'Popins', sans-serif;
+    font-size: 30px;
+    padding: 10px;
+    padding-bottom: 0px;
+    text-align: center;
+    color: #000000;
+}
+.t1{
+    background-color: #4FB8E8;
+    color: #000000;
+}
+.t2{
+    background-color: #FF9F80;
+}
+.gest{
+    background-color: #906557;
+    color: #000000;
+}
+.text2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 15px 10px 15px;
+}
+.welcome{
+    margin-top: 45px;
+}
+.tWelcome, .partner{
+    font-family: 'Popins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 7px;
+    font-size: 30px;
+    text-align: center;
+}
+.partner{
+    margin-top: 20px;
+}
+.wBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+.wImg{
+    width: 490px;
+    height: 530px;
+    align-self:last baseline;
+}
+.text3{
+    width: 90%;
+    text-align: end;
+    font-size: 22px;
+}
+.sDarkRed{
+    color: #EA3D3D;
+}
+.sBrown{
+    color: #906557;
+}
+.why{
+    width: 90%;
+    text-align: center;
+    color: #EA3D3D;
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.cad{
+    margin-top: 20px;
+    margin-left: 25%;
+    margin-bottom: 15px;
+    background-color: #4FB8E8;
+    width: 45%;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.cad a{
+    text-decoration: none;
+    color: #000000;
+}
+.cad:hover{
+    background-color: #906557;
+    transition: 0.3s;
+}
+.cad:hover a{
+    color: #FFFFFF;
+    transition: 0.3s;
+}

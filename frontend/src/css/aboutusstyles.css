@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+.header{
+    width: 100%;
+    background-color: #FCEDE9;
+}
+.hBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+button{
+    width: 160px;
+    height: 72px;
+    border-radius: 10px;
+    border-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    margin: 3px;
+    font-size: 20px;
+}
+.bHome{
+    background-color: transparent;
+}
+.bHome a{
+    color: #000000;
+}
+.bHome:hover{
+    background-color: #EA3D3D;
+}
+.bHome:hover a{
+    color: #FFFFFF;
+}
+.bLogin{
+    background-color: transparent;
+}
+.bLogin a{
+    color: #000000;
+}
+.bLogin:hover{
+    background-color: #EA3D3D;
+    transition: 0.3s;
+}
+.bLogin:hover a{
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+
+.bAboutUs{
+    background-color: #EA3D3D;
+}
+.bAboutUs a{
+    color: #FFFFFF;
+}
+.Box{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+}
+.flexbox{
+    border-radius: 10px;
+    width: 18%;
+    text-align: center;
+    align-items: center;
+}
+
+.div1{
+    background-color: #FF9F80;
+}
+.div2{
+    background-color: #A5DAF3;
+}
+.div3{
+    background-color: #EA3D3D;
+}
+.div4{
+    background-color: #FFC9B3;
+}
+.div5{
+    background-color: #4FB8E8;
+}
+img{
+    width: 165px;
+    height: 145px;
+    border-radius: 50%;
+    margin-top: 15px;
+    border: 2px #000000;
+}
+.text{
+    height: 235px;
+    font-family: 'Popins', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 5px;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.icons img{
+    width: 30px;
+    height: 30px;
+}
+footer{
+    width: 100%;
+}
+.footer{
+    margin-top: 30px;
+    text-align: center;
+    color: #FF9F80;
+    font-family: 'Popins', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+}

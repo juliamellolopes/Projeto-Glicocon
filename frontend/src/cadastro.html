@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cadastrostyles.css">
+    <script src="./js/funcoes.js"></script>
+    <title>Cadastro</title>
+</head>
+<body>
+    <header class="header">
+        <div class="hBox">
+            <div class="b1">
+                <button class="bHome"><a class="hLink" href="../index.html">Home</a></button>
+            </div>
+        </div>
+    </header>
+    <div class="box">
+        <div class="cad">
+                <div class="logoTitle">
+                    <img class="logo" src="./css/images/gota.png" alt="">
+                    <h1 class="title">Glicocon</h1>
+                </div>
+            <div class="container">
+                <div class="did-floating-label-content">
+                  <input id="nome" class="did-floating-input" type="text" placeholder=" ">
+                  <label class="did-floating-label">Nome</label>
+                </div>
+                <div class="did-floating-label-content">
+                    <input id="email" class="did-floating-input" type="email" placeholder=" ">
+                    <label class="did-floating-label">Email</label>
+                  </div>
+                  <div class="did-floating-label-content">
+                    <input id="crm" class="did-floating-input" type="text" placeholder=" ">
+                    <label class="did-floating-label">CRM</label>
+                  </div>
+                  <div class="did-floating-label-content">
+                    <input id="senha" class="did-floating-input" type="password" placeholder=" ">
+                    <label class="did-floating-label">Senha</label>
+                  </div>
+                </div> 
+                <button onclick="cadastrarUser()" class="criarCad">Cadastre-se</button>
+                <p class="login">Já tem uma conta? <a href="./login.html">Login</a></p>
+        </div>
+        <div class="purple"><p>a</p></div>
+        <div class="image"><img src="./css/images/cadastroGirl.png" alt=""></div>
+    </div>
+    <footer>
+            <p class="footer">@2023 Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
